@@ -1,4 +1,5 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 
 import { appSlice } from "./slices/appSlice";
 import {registrationSlice} from "./slices/registrationSlice";
