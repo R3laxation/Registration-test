@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from 'react-router-dom';
+import { PATH } from './common/constants';
+import { Login } from './pages/login/Login';
+import {Home } from './components/home/Home';
+import { Registration } from './pages/registration/Registration';
+import {Profile} from "./pages/profile/Profile";
+import {News} from "./pages/news/News";
+import {Main} from "./pages/main/Main";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Home/>
+        <Routes>
+            <Route path={'/'} element={<Main/>}/>
+            <Route path={PATH.LOGIN} element={<Login/>}/>
+            <Route path={PATH.REGISTRATION} element={<Registration/>}/>
+            <Route path={PATH.NEWS} element={<News/>}/>
+            <Route path={PATH.PROFILE + '/*'} element={<Profile/>}/>
+        </Routes>
     </div>
   );
 }
