@@ -4,6 +4,11 @@ import {Controller, SubmitHandler, useForm, useFormState} from 'react-hook-form'
 
 import {useNavigate} from "react-router-dom";
 import {getTokenFromLocalStorage} from "../../../utils/localStorage/localStorage";
+import { useAppDispatch } from '../../../bll/store';
+import {setIsLoginTC} from "../../../bll/slices/appSlice";
+import {PATH} from "../../../common/constants";
+import {loginValidation, passwordValidation} from "../validation";
+import styles from './Login.module.css';
 
 export const Login: React.FC = () => {
 
@@ -17,14 +22,12 @@ export const Login: React.FC = () => {
         console.log(data)
     }
 
-
     useEffect(() => {
         const token = getTokenFromLocalStorage('token');
         if (token) {
             navigate(PATH.MAIN)
         }
     }, [])
-
 
     return (
         <div className={styles.loginPage}>

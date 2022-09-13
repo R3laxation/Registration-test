@@ -1,3 +1,5 @@
+import { IAuthForm } from "../pages/auth/login/Login";
+import { instance } from "./settings";
 
 
 export const auth = {
