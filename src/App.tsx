@@ -7,6 +7,7 @@ import { Registration } from './pages/auth/registration/Registration';
 import {Profile} from "./pages/profile/Profile";
 import {News} from "./pages/news/News";
 import {Main} from "./pages/main/Main";
+import {AuthPage} from "./pages/auth/AuthPage";
 
 
 function App() {
@@ -15,8 +16,7 @@ function App() {
         <Home/>
         <Routes>
             <Route path={'/'} element={<Main/>}/>
-            <Route path={PATH.LOGIN} element={<Login/>}/>
-            <Route path={PATH.REGISTRATION} element={<Registration/>}/>
+            <Route path={PATH.AUTH} element={<AuthPage/>}/>
             <Route path={PATH.NEWS} element={<News/>}/>
             <Route path={PATH.PROFILE + '/*'} element={<Profile/>}/>
         </Routes>

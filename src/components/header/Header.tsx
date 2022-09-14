@@ -45,7 +45,7 @@ export const Header = ({open, handleDrawer, clickedButtonHandler}: HeaderPropsTy
                     </IconButton>
                     <span>Secret company</span>
                 </Box>
-                <Link to={PATH.LOGIN} style={{textDecoration:'none'}}>
+                <Link to={PATH.AUTH} style={{textDecoration:'none'}}>
                     <Button color="primary" variant="outlined" sx={{color: 'white', border: '1px solid white'}}>Войти</Button>
                 </Link>
 
