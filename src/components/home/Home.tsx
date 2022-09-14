@@ -53,23 +53,18 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
 
 export const Home = () => {
     const [open, setOpen] = React.useState(false);
-    const [buttonIsClicked, setButtonIsClicked] = React.useState(false);
 
     const handleDrawer = () => {
         setOpen(prevState => !prevState);
     };
 
-    const clickedButtonHandler = () => {
-        setButtonIsClicked(prevState => !prevState);
-    };
-
     return (
         <Box sx={{display: 'flex'}}>
-            <Header open={open} handleDrawer={handleDrawer} clickedButtonHandler={clickedButtonHandler}/>
+            <Header open={open} handleDrawer={handleDrawer}/>
             <Drawer variant="permanent" open={open}>
                 <DrawerHeader>
                 </DrawerHeader>
-                <NavList open={open} handleDrawer={handleDrawer} buttonIsClicked={buttonIsClicked}/>
+                <NavList open={open}/>
             </Drawer>
             <Box component="main" sx={{flexGrow: 1, p: 3}}>
                 <DrawerHeader/>

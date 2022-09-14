@@ -8,7 +8,7 @@ import {Feed as News, Home as Home, Person as Person} from "@mui/icons-material"
 import {Link} from 'react-router-dom';
 import {PATH} from '../../common/constants';
 
-export const NavList = ({open, handleDrawer, buttonIsClicked}: NavListPropsType) => {
+export const NavList = ({open}: NavListPropsType) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -18,19 +18,13 @@ export const NavList = ({open, handleDrawer, buttonIsClicked}: NavListPropsType)
         {id: 3, name: 'News', icon: <News sx={{color: 'white'}}/>, route: PATH.NEWS},
     ]
 
-    const onMouseHandler = () => {
-        if (!buttonIsClicked) {
-            handleDrawer()
-        }
-    }
-
     const setActiveHandler = (index: number) => {
         setActiveIndex(index)
     }
 
     return (
         <div>
-            <List onMouseEnter={onMouseHandler} onMouseLeave={onMouseHandler}>
+            <List>
                 {
                     open && listItem.map((item, index) => {
                         const activeClass = activeIndex === index;
@@ -74,6 +68,4 @@ export const NavList = ({open, handleDrawer, buttonIsClicked}: NavListPropsType)
 
 type NavListPropsType = {
     open: boolean
-    handleDrawer: () => void
-    buttonIsClicked: boolean
 }

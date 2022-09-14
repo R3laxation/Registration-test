@@ -23,27 +23,23 @@ const HeaderBar = styled(AppBar, {
 const Title = styled(Typography)`
   color: white;
   font-size: 24px;
+  display: inline-block;
 `
 
-export const Header = ({open, handleDrawer, clickedButtonHandler}: HeaderPropsType) => {
-
-    const onClickHandler = () => {
-        handleDrawer()
-        clickedButtonHandler()
-    }
+export const Header = ({open, handleDrawer}: HeaderPropsType) => {
 
     return (
         <HeaderBar open={open} >
-            <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
+            <Toolbar sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <Box>
                     <IconButton
-                        onClick={onClickHandler}
+                        onClick={handleDrawer}
                         edge="start"
                         sx={{marginRight: 2, color: 'white'}}
                     >
                         <Menu />
                     </IconButton>
-                    <span>Secret company</span>
+                    <Title>Secret company</Title>
                 </Box>
                 <Link to={PATH.AUTH} style={{textDecoration:'none'}}>
                     <Button color="primary" variant="outlined" sx={{color: 'white', border: '1px solid white'}}>Войти</Button>
@@ -57,5 +53,4 @@ export const Header = ({open, handleDrawer, clickedButtonHandler}: HeaderPropsTy
 type HeaderPropsType = {
     open: boolean
     handleDrawer: () => void
-    clickedButtonHandler: () => void
 }
