@@ -1,8 +1,10 @@
-import {IconButton, Typography, Toolbar} from '@mui/material';
+import {IconButton, Typography, Toolbar, Button, Box} from '@mui/material';
 import AppBar, {AppBarProps as MuiAppBarProps} from '@mui/material/AppBar/AppBar';
 import * as React from 'react';
 import {Menu} from "@mui/icons-material";
 import {styled} from "@mui/material/styles";
+import {Link} from "react-router-dom";
+import {PATH} from "../../common/constants";
 
 interface AppBarProps extends MuiAppBarProps {
     open?: boolean;
@@ -31,17 +33,22 @@ export const Header = ({open, handleDrawer, clickedButtonHandler}: HeaderPropsTy
     }
 
     return (
-        <HeaderBar open={open}>
-            <Toolbar>
-                <IconButton
-                    onClick={onClickHandler}
-                    edge="start"
-                    sx={{marginRight: 2, color: 'white'}}
-                >
-                    <Menu />
-                </IconButton>
-                {/*<img src={logo} alt="logo" style={{width: '30px', marginRight: '20px' }}/>*/}
-                <Title>Secret company</Title>
+        <HeaderBar open={open} >
+            <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
+                <Box>
+                    <IconButton
+                        onClick={onClickHandler}
+                        edge="start"
+                        sx={{marginRight: 2, color: 'white'}}
+                    >
+                        <Menu />
+                    </IconButton>
+                    <span>Secret company</span>
+                </Box>
+                <Link to={PATH.LOGIN} style={{textDecoration:'none'}}>
+                    <Button color="primary" variant="outlined" sx={{color: 'white', border: '1px solid white'}}>Войти</Button>
+                </Link>
+
             </Toolbar>
         </HeaderBar>
     );
