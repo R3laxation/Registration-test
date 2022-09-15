@@ -3,6 +3,7 @@ import {CSSObject, styled, Theme} from '@mui/material/styles';
 import {Box, Drawer as MuiDrawer} from '@mui/material';
 import {Header} from "../header/Header";
 import {NavList} from '../navlist/NavList';
+import {Outlet} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -71,6 +72,7 @@ export const Layout = () => {
                 <DrawerHeader/>
             </Box>
         </Box>
+            <Outlet/>
         </>
     );
 };
