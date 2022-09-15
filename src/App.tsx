@@ -8,18 +8,19 @@ import {Main} from "./pages/main/Main";
 import {AuthPage} from "./pages/auth/AuthPage";
 
 function App() {
-  return (
-    <div>
-        <Layout/>
-        <Routes>
-            <Route path={'/'} element={<Main/>}/>
-            <Route path={PATH.MAIN} element={<Main/>}/>
-            <Route path={PATH.AUTH} element={<AuthPage/>}/>
-            <Route path={PATH.NEWS} element={<News/>}/>
-            <Route path={PATH.PROFILE + '/*'} element={<Profile/>}/>
-        </Routes>
-    </div>
-  );
+    return (
+        <div>
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'/'} element={<Main/>}/>
+                    <Route path={PATH.MAIN} element={<Main/>}/>
+                    <Route path={PATH.AUTH} element={<AuthPage/>}/>
+                    <Route path={PATH.NEWS} element={<News/>}/>
+                    <Route path={PATH.PROFILE + '/*'} element={<Profile/>}/>
+                </Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
