@@ -14,10 +14,12 @@ function App() {
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<Main/>}/>
                     <Route path={PATH.MAIN} element={<Main/>}/>
-                    <Route path={PATH.AUTH} element={<AuthPage/>}/>
                     <Route path={PATH.NEWS} element={<News/>}/>
                     <Route path={PATH.PROFILE + '/*'} element={<Profile/>}/>
                 </Route>
+            </Routes>
+            <Routes>
+                <Route path={PATH.AUTH} element={<AuthPage/>}/>
             </Routes>
         </div>
     );
