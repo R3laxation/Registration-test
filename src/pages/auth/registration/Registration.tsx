@@ -18,7 +18,7 @@ export const Registration: React.FC = () => {
     }
 
     return (
-        <div className={styles.registrationPage}>
+        <div className={styles.authPage}>
             <Typography variant="h4">
                 Sign Up
             </Typography>

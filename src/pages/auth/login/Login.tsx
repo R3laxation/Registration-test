@@ -30,7 +30,7 @@ export const Login: React.FC = () => {
     }, [])
 
     return (
-        <div className={styles.loginPage}>
+        <div className={styles.authPage}>
             <Typography variant="h4">
                 Sign in
             </Typography>
