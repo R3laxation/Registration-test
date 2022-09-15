@@ -1,6 +1,6 @@
 export enum PATH {
-    MAIN = '/main',
-    AUTH = '/auth',
-    NEWS = '/news',
-    PROFILE = '/profile',
+    MAIN = 'main',
+    AUTH = 'auth',
+    NEWS = 'news',
+    PROFILE = 'profile',
 }

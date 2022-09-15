@@ -61,17 +61,17 @@ export const Layout = () => {
 
     return (
         <>
-        <Box sx={{display: 'flex'}}>
-            <Header open={open} handleDrawer={handleDrawer}/>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
-                </DrawerHeader>
-                <NavList open={open}/>
-            </Drawer>
-            <Box component="main" sx={{flexGrow: 1, p: 3}}>
-                <DrawerHeader/>
+            <Box sx={{display: 'flex'}}>
+                <Header open={open} handleDrawer={handleDrawer}/>
+                <Drawer variant="permanent" open={open}>
+                    <DrawerHeader>
+                    </DrawerHeader>
+                    <NavList open={open}/>
+                </Drawer>
+                <Box component="main" sx={{flexGrow: 1, p: 3}}>
+                    <DrawerHeader/>
+                </Box>
             </Box>
-        </Box>
             <Outlet/>
         </>
     );
