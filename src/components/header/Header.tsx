@@ -22,7 +22,7 @@ const HeaderBar = styled(AppBar, {
 
 const Title = styled(Typography)`
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   display: inline-block;
 `
 

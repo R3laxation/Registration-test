@@ -51,7 +51,7 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
     }),
 );
 
-export const Home = () => {
+export const Layout = () => {
     const [open, setOpen] = React.useState(false);
 
     const handleDrawer = () => {
@@ -59,6 +59,7 @@ export const Home = () => {
     };
 
     return (
+        <>
         <Box sx={{display: 'flex'}}>
             <Header open={open} handleDrawer={handleDrawer}/>
             <Drawer variant="permanent" open={open}>
@@ -70,6 +71,7 @@ export const Home = () => {
                 <DrawerHeader/>
             </Box>
         </Box>
+        </>
     );
 };
 

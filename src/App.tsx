@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import {PATH} from './common/constants';
-import {Home} from './components/home/Home';
+import {Layout} from './components/layout/Layout';
 import {Profile} from "./pages/profile/Profile";
 import {News} from "./pages/news/News";
 import {Main} from "./pages/main/Main";
@@ -10,7 +10,7 @@ import {AuthPage} from "./pages/auth/AuthPage";
 function App() {
   return (
     <div>
-        <Home/>
+        <Layout/>
         <Routes>
             <Route path={'/'} element={<Main/>}/>
             <Route path={PATH.MAIN} element={<Main/>}/>
